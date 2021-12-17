@@ -1,0 +1,7 @@
+flask
+sklearn
+gunicorn
+pillow
+numpy
+pandas
+matplotlib.pyplot

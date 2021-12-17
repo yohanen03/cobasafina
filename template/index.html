@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  
+</head>
+
+<body>
+ <div class="login">
+	<h1>Predict Salary Analysis</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+    	<input type="text" name="Age" placeholder="Age" required="required" />
+        <input type="text" name="Gender" placeholder="Gender" required="required" />
+	<input type="text" name="Polyuria" placeholder="Polyuria" required="required" />
+	<input type="text" name="Polydipsia" placeholder="Polydipsia" required="required" />
+	<input type="text" name="suddenweightloss" placeholder="sudden weight loss" required="required" />	
+	<input type="text" name="weakness" placeholder="weakness" required="required" />
+	<input type="text" name="Polyphagia" placeholder="Polyphagia" required="required" />
+	<input type="text" name="Genitalthrush" placeholder="Genital thrush" required="required" />
+	<input type="text" name="visualblurring" placeholder="visual blurring" required="required" />
+	<input type="text" name="Itching" placeholder="Itching" required="required" />
+	<input type="text" name="Irritability" placeholder="Irritability" required="required" />
+	<input type="text" name="delayedhealinge" placeholder="delayed healing" required="required" />
+	<input type="text" name="partialparesis" placeholder="partial paresis" required="required" />
+	<input type="text" name="musclestiffness" placeholder="muscle stiffness" required="required" />
+	<input type="text" name="Alopecia" placeholder="Alopecia" required="required" />
+	<input type="text" name="Obesity" placeholder="Obesity" required="required" />
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+
+
+</body>
+</html>
